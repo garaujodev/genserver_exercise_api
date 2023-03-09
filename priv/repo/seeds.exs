@@ -9,3 +9,15 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+datetime = 
+  NaiveDateTime.utc_now
+  |> NaiveDateTime.truncate(:second)
+
+data = Enum.map(1..1_000_000, fn _val -> %{inserted_at: datetime, updated_at: datetime} end)
+
+list_of_chunks = Enum.chunk_every(data, 1_000)
+
+Enum.each list_of_chunks, fn rows ->
+  Ranking.Repo.insert_all(Ranking.Accounts.User, rows)
+end
