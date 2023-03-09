@@ -7,5 +7,7 @@ defmodule RankingWeb.Router do
 
   scope "/", RankingWeb do
     pipe_through :api
+
+    get "/", UserController, :index
   end
 end
