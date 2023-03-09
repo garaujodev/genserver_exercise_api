@@ -2,6 +2,8 @@
 
 When started, this application will start a [GenServer](https://hexdocs.pm/elixir/1.14.3/GenServer.html) that runs in every 1 minute updating all `points` field from `users` table to a random number [0-100].
 
+_DISCLAIMER_: As you can see, we have some modules and functions that we are not using right now, but I prefer to keep it cause I intend to work in some enhancements/POCs later.
+
 # Setup
 
 ## Requirements
