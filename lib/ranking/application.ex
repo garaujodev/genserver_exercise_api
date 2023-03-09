@@ -15,9 +15,10 @@ defmodule Ranking.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Ranking.PubSub},
       # Start the Endpoint (http/https)
-      RankingWeb.Endpoint
+      RankingWeb.Endpoint,
       # Start a worker by calling: Ranking.Worker.start_link(arg)
       # {Ranking.Worker, arg}
+      Ranking.Worker
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
